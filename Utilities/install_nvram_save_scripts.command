@@ -1,5 +1,9 @@
 #!/bin/bash 
 
+dir=${0%/*}
+if [[ "$dir" == "" ]]; then dir="."; fi
+cd "$dir"
+
 echo Installing Patching nvram save method via LogoutHook
 
 # 

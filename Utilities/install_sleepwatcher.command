@@ -1,7 +1,10 @@
 #!/bin/bash 
 
-echo Installing Sleepwatcher Scripts
+dir=${0%/*}
+if [[ "$dir" == "" ]]; then dir="."; fi
+cd "$dir"
 
+echo Installing Sleepwatcher Scripts
 # 
 fixed=root/etc/rc.sleep
 patch=/etc/rc.sleep
