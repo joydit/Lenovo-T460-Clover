@@ -1,24 +1,10 @@
 #!/bin/bash
 
 model=$1
-uid=10
-
-if [[ "$@" == "" ]]; 
-then
-printf "Enter Model: T420 or T460?\n"
-read model
-fi
+targetdir=$2
 
 panels=Panel_Backlight.plist
-#targetdir=Other
-targetdir=../../EFI/CLOVER/kexts/Other
-
-grep $model ${panels} > /dev/null
-if [ $? != 0 ] ;
-then 
-    printf "Model $model not found in ${panels} - abort. \n"
-    exit 1
-fi
+uid=10
 
 # set -x
 

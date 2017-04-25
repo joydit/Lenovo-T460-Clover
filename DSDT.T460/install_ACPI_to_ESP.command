@@ -2,6 +2,10 @@
 
 PATH=$PATH:/usr/local/bin
 
+dir=${0%/*}
+if [[ "$dir" == "" ]]; then dir="."; fi
+cd "$dir"
+
 espmount=$( which espmount.bash )
 if [[ "x${espmount}" == "x" ]];
 then 

@@ -3,6 +3,10 @@
 set -e
 PATH=$PATH:/usr/local/bin
 
+dir=${0%/*}
+if [[ "$dir" == "" ]]; then dir="."; fi
+cd "$dir"
+
 patch_dir=temp_patch_result
 
 iasltool=$( which iasl )
